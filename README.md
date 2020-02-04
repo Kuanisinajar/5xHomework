@@ -7,6 +7,8 @@ Original instruction here: [5xTrainning](https://github.com/5xRuby/5xtraining/bl
 
 `$ npm start` to run a dev server
 
+`$ gulp` to start listening to SCSS file changes 
+
 
 ## Project Information
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

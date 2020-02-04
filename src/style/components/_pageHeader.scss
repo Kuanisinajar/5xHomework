@@ -1,16 +1,16 @@
 .pageHeader {
     width: 100%;
     height: 4.5rem;
-    padding: 0.75rem 1.5rem;
     background: white;
 }
 
 .navBar {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
+    padding: 0.75rem 1.5rem;
     align-items: center;
-    flex-wrap: wrap;
 
     &_logo {
         flex: 0 0;
@@ -19,7 +19,7 @@
     &_itemWrapper {
         flex: 1 0;
         display: flex;
-        flex-direction: row-reverse;
+        justify-content: flex-end;
     }
 }
 
@@ -30,10 +30,6 @@
     a:hover {
         color: $ruby;
     }
-}
-
-.navItem:nth-child(1) {
-    padding-right: 0;
 }
 
 .navBar_toggle {
@@ -60,9 +56,14 @@
 
 .pageHeader {
     @include media("below-tablet") {
-        padding-right: 0;
-        padding-top: 0;
-        border-bottom: 1px solid $gray-1;
+        height: auto;
+    }
+}
+
+.navBar {
+    @include media("below-tablet") {
+        padding: 0;
+        padding-left: 1.5rem;
     }
 }
 
@@ -80,29 +81,35 @@
 
 .navBar_itemWrapper {
     @include media("below-tablet") {
-        display: none;
+        display: flex;
         flex: initial;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 1rem;
         margin-right: 1.5rem;
+        border-top: 1px solid $gray-1;
+        max-height: 0;
+        transition:  0.4s ease-out;
+        overflow: hidden;
     }
 }
 .navBar_itemWrapper.active {
     @include media("below-tablet") {
         display: flex;
+        flex-direction: column;
+        max-height: 600px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }
 
 .navItem {
+    @include media('below-desktop') {
+        font-size: 14px;
+        padding: 0.75rem;
+    }
     @include media("below-tablet") {
         padding: 1rem 1rem;
     }
 }
 
-.navItem:nth-child(1) {
-    @include media("below-tablet") {
-        padding-right: 1rem;
-    }
-}

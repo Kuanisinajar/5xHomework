@@ -31,7 +31,7 @@ class PageHeader extends Component {
                         <div className='iconBar'></div>
                     </button>
                     <div className={`navBar_itemWrapper ${this.state.activeInMobile ? 'active' : ''}`}>
-                        {navItem.reverse().map((data, i) => {
+                        {navItem.map((data, i) => {
                             return (
                                 <div className="navItem" key={i}>
                                     <a href="/">{data.text}</a>

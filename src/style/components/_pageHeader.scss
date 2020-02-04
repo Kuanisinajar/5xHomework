@@ -1,0 +1,32 @@
+.pageHeader {
+    width: 100%;
+    height: 4rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+}
+
+.navBar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    &_left {
+        flex: 0 0;
+    }
+
+    &_right {
+        flex: 1 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+.navItem {
+    padding: 0 1rem;
+    color: $gray-5;
+}
+
+.navItem:nth-child(1) {
+    padding-right: 0;
+}

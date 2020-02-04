@@ -4,6 +4,7 @@ Original instruction here: [5xTrainning](https://github.com/5xRuby/5xtraining/bl
 
 ## Getting Started
 `$ npm install` to install packages
+
 `$ npm start` to run a dev server
 
 

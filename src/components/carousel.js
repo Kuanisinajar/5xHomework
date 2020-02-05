@@ -5,6 +5,18 @@ class Carousel extends Component {
         currentIndex: 0
     };
 
+    transformProperty = (index) => {
+        return {
+            transform: `translate(-${index}00%, 0)`
+        }
+    }
+
+    toIndex = i => {
+        this.setState({
+            currentIndex: i
+        })
+    };
+
     render() {
         const { carouselItem } = this.props.data;
         const currentIndex = this.state.currentIndex;
@@ -12,7 +24,7 @@ class Carousel extends Component {
         return (
             <div className="carousel">
                 <div className="carousel_container">
-                    <div className="carousel_itemWrapper">
+                    <div className="carousel_itemWrapper" style={this.transformProperty(currentIndex)}>
                         {carouselItem.map((item, i) => {
                             return (
                                 <img
@@ -27,7 +39,16 @@ class Carousel extends Component {
                     <div className="carousel_indicator">
                         {carouselItem.map((item, i) => {
                             return (
-                                <span className={`indicator ${currentIndex === i ? 'active' : ''}`} key={i}></span>
+                                <span
+                                    className={`indicator ${
+                                        currentIndex === i ? "active" : ""
+                                    }`}
+                                    onClick={() => {
+                                        this.toIndex(i)
+                                    }}
+                                    data-carousel={i}
+                                    key={i}
+                                ></span>
                             );
                         })}
                     </div>

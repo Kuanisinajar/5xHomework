@@ -1,17 +1,35 @@
-import React from 'react';
+import React from "react";
 
 // components
-import Block from './block';
-import TitledContainer from './titledContainer';
+import Block from "./block";
+import TitledContainer from "./titledContainer";
 
-const Feature = () => {
-    return ( 
-        <Block id='feature'>
-            <TitledContainer title="這看起來超酷！">
-                
+const Feature = props => {
+    const { title, feature } = props.data;
+    return (
+        <Block id="feature">
+            <TitledContainer title={title}>
+                <div className="row">
+                    {feature.map((info, i) => {
+                        return (
+                            <div
+                                className="featureSingle col-12 col-sm-12 col-sm-12 col-md-3 col-lg-3"
+                                key={i}
+                            >
+                                <a href={info.href}>
+                                    <div className="imgContainer">
+                                        <img src={info.img_url} alt="" />
+                                    </div>
+                                    <h2>{info.title}</h2>
+                                    <p>{info.content}</p>
+                                </a>
+                            </div>
+                        );
+                    })}
+                </div>
             </TitledContainer>
         </Block>
-     );
-}
- 
+    );
+};
+
 export default Feature;

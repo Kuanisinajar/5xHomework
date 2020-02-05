@@ -8,13 +8,14 @@ import Feature from './components/feature';
 // data
 import headerData from "./json/pageHeader";
 import carouselData from "./json/carousel";
+import featureData from './json/feature';
 
 function App() {
     return (
         <div className="App">
             <PageHeader data={headerData} />
             <Carousel data={carouselData} />
-            <Feature />
+            <Feature data={featureData}/>
         </div>
     );
 }

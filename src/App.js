@@ -3,7 +3,7 @@ import React from "react";
 // components
 import PageHeader from "./components/pageHeader";
 import Carousel from "./components/carousel";
-import Block from "./components/block";
+import Feature from './components/feature';
 
 // data
 import headerData from "./json/pageHeader";
@@ -14,6 +14,7 @@ function App() {
         <div className="App">
             <PageHeader data={headerData} />
             <Carousel data={carouselData} />
+            <Feature />
         </div>
     );
 }

@@ -2,8 +2,28 @@ import React, { Component } from "react";
 
 class Carousel extends Component {
     state = {
-        currentIndex: 0
+        currentIndex: 0,
+        interval: null
     };
+
+    componentDidMount() {
+        this.startAutoSlide()
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.interval);
+    }
+
+    startAutoSlide() {
+        const interval = setInterval(() => {
+            this.setState({
+                currentIndex: (this.state.currentIndex + 1) % 4
+            })
+        }, 5000);
+        this.setState({
+            interval
+        })
+    }
 
     transformProperty = (index) => {
         return {
@@ -16,6 +36,12 @@ class Carousel extends Component {
             currentIndex: i
         })
     };
+
+    handleClick = (i) => {
+        this.toIndex(i);
+        clearInterval(this.state.interval);
+        this.startAutoSlide();
+    }
 
     render() {
         const { carouselItem } = this.props.data;
@@ -44,7 +70,7 @@ class Carousel extends Component {
                                         currentIndex === i ? "active" : ""
                                     }`}
                                     onClick={() => {
-                                        this.toIndex(i)
+                                        this.handleClick(i)
                                     }}
                                     data-carousel={i}
                                     key={i}

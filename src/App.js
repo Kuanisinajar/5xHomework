@@ -4,6 +4,7 @@ import React from "react";
 import PageHeader from "./components/pageHeader";
 import Carousel from "./components/carousel";
 import Feature from './components/feature';
+import PopularCourse from './components/popularCourse';
 
 // data
 import headerData from "./json/pageHeader";
@@ -16,6 +17,7 @@ function App() {
             <PageHeader data={headerData} />
             <Carousel data={carouselData} />
             <Feature data={featureData}/>
+            <PopularCourse />
         </div>
     );
 }

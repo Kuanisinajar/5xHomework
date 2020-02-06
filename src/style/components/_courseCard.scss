@@ -3,6 +3,12 @@
     position: relative;
     padding-top: 147%;
     border: 1px solid $gray-1;    
+    transition: 0.2s;
+}
+
+.courseCard:hover {
+    transform: translate(0, -4px);
+    box-shadow: 0 8px 24px -4px $gray-2;
 }
 
 .courseCard_wrapper {

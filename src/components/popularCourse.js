@@ -4,6 +4,7 @@ import React from "react";
 import Block from "./block";
 import TitledContainer from "./titledContainer";
 import CourseCard from "./courseCard";
+import ButtonCta from './buttonCta';
 
 const PopularCourse = props => {
     const { popularCourse } = props.data;
@@ -18,6 +19,11 @@ const PopularCourse = props => {
                             </div>
                         );
                     })}
+                </div>
+                <div className="row">
+                    <div className="col-12 popularCourse_cta">
+                        <ButtonCta action="看更多網頁課程"/>
+                    </div>
                 </div>
             </TitledContainer>
         </Block>

@@ -1,25 +1,33 @@
 import React from "react";
 
-const CourseCard = (props) => {
-    const {img_url, name, instructor, tag, month, type} = props.courseInfo;
+const CourseCard = props => {
+    const { img_url, name, instructor, tag, month, type } = props.courseInfo;
     return (
         <div className="courseCard">
             <div className="courseCard_wrapper">
                 <div className="courseCard_imgContainer">
-                    <img src={img_url} alt=""/>
+                    <img src={img_url} alt="" />
                 </div>
                 <div className="courseCard_contentWrapper">
                     <div className="courseCard_tagWrapper">
-                        {
-                            tag.map((key) => {
-                                return matchTag(key)
-                            })
-                        }
+                        {tag.map((key, i) => {
+                            const data = matchTagData(key);
+                            return (
+                                <span
+                                    className={`tag ${data.className}`}
+                                    key={i}
+                                >
+                                    {data.text}
+                                </span>
+                            );
+                        })}
                         <h3>{name}</h3>
                         <small>講師：{instructor}</small>
                         <div className="courseCard_timeInfo">
                             <span>開課時間</span>
-                            <span>{month}｜{type}</span>
+                            <span>
+                                {month}｜{type}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -28,21 +36,19 @@ const CourseCard = (props) => {
     );
 };
 
-function matchTag(key) {
+function matchTagData(key) {
     const variations = {
         new: {
             className: "tag_newCourse",
-            text: '新開課'
+            text: "新開課"
         },
         opening: {
             className: "tag_opening",
-            text: '開放報名中'
+            text: "開放報名中"
         }
-    }
+    };
 
-    return (
-        <span className={`tag ${variations[key].className}`}>{variations[key].text}</span>
-    )
+    return variations[key];
 }
 
 export default CourseCard;

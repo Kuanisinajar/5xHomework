@@ -7,6 +7,7 @@ import Feature from "./components/feature";
 import PopularCourse from "./components/popularCourse";
 import Feedback from "./components/feedback";
 import Showcase from './components/showcase';
+import MoreInfo from './components/moreInfo';
 
 // data
 import headerData from "./json/pageHeader";
@@ -36,6 +37,7 @@ function App() {
             <PopularCourse data={popularCourseData} />
             <Feedback data={feedbackData}/>
             <Showcase data={showcaseData}/>
+            <MoreInfo />
         </div>
     );
 }

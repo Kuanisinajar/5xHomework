@@ -1,11 +1,11 @@
 import React from 'react'
 
 const ButtonCta = (props) => {
-    const { action } = props;
+    const { action, href } = props;
     return ( 
-        <button className='button_cta'>
+        <a className='button_cta' href={href}>
             {action}
-        </button>
+        </a>
      );
 }
  

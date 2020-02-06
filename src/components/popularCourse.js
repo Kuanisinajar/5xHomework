@@ -22,7 +22,7 @@ const PopularCourse = props => {
                 </div>
                 <div className="row">
                     <div className="col-12 popularCourse_cta">
-                        <ButtonCta action="看更多網頁課程"/>
+                        <ButtonCta action="看更多網頁課程" href="/"/>
                     </div>
                 </div>
             </TitledContainer>

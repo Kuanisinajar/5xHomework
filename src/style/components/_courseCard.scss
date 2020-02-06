@@ -1,0 +1,36 @@
+.courseCard {
+    display: block;
+    position: relative;
+    padding-top: 147%;
+    border: 1px solid $gray-1;    
+}
+
+.courseCard_wrapper {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.courseCard_imgContainer {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+.courseCard_contentWrapper {
+    padding: 0.5rem 1rem;
+}
+

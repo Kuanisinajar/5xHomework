@@ -2,7 +2,6 @@
     display: block;
     position: relative;
     border: 1px solid $gray-1;  
-    margin-bottom: 2rem;  
     transition: 0.2s;
 }
 .coverCard:hover {
@@ -31,5 +30,5 @@
     display: block;
     position: relative;
     width: 100%;
-    padding: 4px 8px;
+    padding: 1rem 1.5rem 2rem 1.5rem;
 }

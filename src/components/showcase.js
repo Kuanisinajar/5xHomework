@@ -11,11 +11,11 @@ const Showcase = (props) => {
     return ( 
         <Block id='showcase'>
             <TitledContainer title='案例作品 Showcase'>
-                <div className="row">
+                <div className="row justify-content-center">
                     {
                          showcase.map((info, i) => {
                             return (
-                                <div className="col-4" key={i}>
+                                <div className="col-10 col-sm-12 col-md-6 col-lg-4 showcase_card" key={i}>
                                     <CoverCard ratio={0.612} img_url={info.img_url}>
                                         <h2 className="showcase_name">
                                             {info.name}

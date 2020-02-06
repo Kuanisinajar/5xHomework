@@ -20,7 +20,7 @@ const Showcase = (props) => {
                                         <h2 className="showcase_name">
                                             {info.name}
                                         </h2>
-                                        <p>
+                                        <p className="showcase_description">
                                             {info.description}
                                         </p>
                                     </CoverCard>

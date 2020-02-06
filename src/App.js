@@ -5,6 +5,7 @@ import PageHeader from "./components/pageHeader";
 import Carousel from "./components/carousel";
 import Feature from './components/feature';
 import PopularCourse from './components/popularCourse';
+import Feedback from './components/feedback';
 
 // data
 import headerData from "./json/pageHeader";
@@ -19,6 +20,7 @@ function App() {
             <Carousel data={carouselData} />
             <Feature data={featureData}/>
             <PopularCourse data={popularCourseData}/>
+            <Feedback />
         </div>
     );
 }

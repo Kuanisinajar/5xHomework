@@ -3,10 +3,16 @@ import React, { Component } from "react";
 class Carousel extends Component {
     state = {
         currentIndex: 0,
-        interval: null
+        interval: null,
+        length: null
     };
 
     componentDidMount() {
+        if (this.state.length === null) {
+            this.setState({
+                length: this.props.children.length
+            })
+        }
         this.startAutoSlide()
     }
 
@@ -17,7 +23,7 @@ class Carousel extends Component {
     startAutoSlide() {
         const interval = setInterval(() => {
             this.setState({
-                currentIndex: (this.state.currentIndex + 1) % 4
+                currentIndex: (this.state.currentIndex + 1) % (this.state.length || 1)
             })
         }, 5000);
         this.setState({
@@ -44,26 +50,17 @@ class Carousel extends Component {
     }
 
     render() {
-        const { carouselItem } = this.props.data;
+        const {children} = this.props
         const currentIndex = this.state.currentIndex;
 
         return (
             <div className="carousel">
                 <div className="carousel_container">
                     <div className="carousel_itemWrapper" style={this.transformProperty(currentIndex)}>
-                        {carouselItem.map((item, i) => {
-                            return (
-                                <img
-                                    src={item.img_url}
-                                    className="carousel_img"
-                                    alt=""
-                                    key={i}
-                                />
-                            );
-                        })}
+                        {children}
                     </div>
                     <div className="carousel_indicator">
-                        {carouselItem.map((item, i) => {
+                        {children && children.map((item, i) => {
                             return (
                                 <span
                                     className={`indicator ${

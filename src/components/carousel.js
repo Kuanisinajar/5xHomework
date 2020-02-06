@@ -8,12 +8,12 @@ class Carousel extends Component {
     };
 
     componentDidMount() {
-        if (this.state.length === null) {
+        if (this.state.length === null && this.props.children) {
             this.setState({
                 length: this.props.children.length
             })
         }
-        this.startAutoSlide()
+        // this.startAutoSlide()
     }
 
     componentWillUnmount() {

@@ -12,6 +12,7 @@ import headerData from "./json/pageHeader";
 import carouselData from "./json/carousel";
 import featureData from "./json/feature";
 import popularCourseData from "./json/popularCourse";
+import feedbackData from './json/feedback';
 
 function App() {
     return (
@@ -31,7 +32,7 @@ function App() {
             </Carousel>
             <Feature data={featureData} />
             <PopularCourse data={popularCourseData} />
-            <Feedback />
+            <Feedback data={feedbackData}/>
         </div>
     );
 }

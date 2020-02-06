@@ -4,6 +4,7 @@ import React from 'react'
 import Block from './block';
 import TitledContainer from './titledContainer';
 import CoverCard from './coverCard';
+import ButtonCta from './buttonCta';
 
 const Showcase = (props) => {
     const { showcase } = props.data || {};
@@ -28,6 +29,11 @@ const Showcase = (props) => {
                             )
                         })
                     }
+                </div>
+                <div className="row">
+                    <div className="col-12 popularCourse_cta">
+                        <ButtonCta action="看更多案例" href="/" />
+                    </div>
                 </div>
             </TitledContainer>
         </Block>

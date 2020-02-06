@@ -1,5 +1,12 @@
 #feedback {
-    .carousel_container  {
-        padding-top: 33%;
+    .carousel_container {
+        padding-top: 25%;
+
+        @include media('below-desktop') {
+            padding-top: 33%;
+        }
+        @include media("below-tablet") {
+            padding-top: 48%;
+        }
     }
 }

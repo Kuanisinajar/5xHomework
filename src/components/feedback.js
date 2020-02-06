@@ -10,7 +10,7 @@ const Feedback = props => {
     const { feedback } = props.data;
     return (
         <Block id="feedback">
-            <TitledContainer title="看看他們怎麼說">
+            <TitledContainer title="看看他們怎麼說" isFluid={true}>
                 <div className="row">
                     <div className="col-12">
                         <Carousel>

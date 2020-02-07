@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 // components
 import PageHeader from "./components/pageHeader";
 import Main from "./components/main";
+import Contact from './components/contact';
 import PageFooter from "./components/pageFooter";
 
 // data
@@ -15,7 +16,8 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <PageHeader data={headerData} />
-                <Main />
+                <Route exact path='/' component={ Main } />
+                <Route path='/contacts' component={ Contact } />
                 <PageFooter data={footerData} />
             </BrowserRouter>
         </div>

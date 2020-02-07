@@ -22,7 +22,7 @@ const PageFooter = (props) => {
                             {
                                 navItem.map((item, i) => {
                                     return (
-                                        <a href={item.href} className="pageFooter_navItem">{item.name}</a>
+                                        <a href={item.href} className="pageFooter_navItem" key={i}>{item.name}</a>
                                     )
                                 })
                             }

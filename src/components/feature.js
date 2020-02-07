@@ -9,11 +9,11 @@ const Feature = props => {
     return (
         <Block id="feature">
             <TitledContainer title={title}>
-                <div className="row">
+                <div className="row justify-content-center">
                     {feature.map((info, i) => {
                         return (
                             <div
-                                className="featureSingle col-12 col-sm-12 col-sm-12 col-md-3 col-lg-3"
+                                className="featureSingle col-8 col-sm-8 col-md-3 col-lg-3"
                                 key={i}
                             >
                                 <a href={info.href}>

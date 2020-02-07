@@ -21,4 +21,8 @@
         line-height: 1.5em;
         text-align: center;
     }
+
+    @include media('below-tablet') {
+        margin-bottom: 2rem;
+    }
 }

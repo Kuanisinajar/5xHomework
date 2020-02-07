@@ -23,7 +23,7 @@ function App() {
     return (
         <div className="App">
             <PageHeader data={headerData} />
-            <Carousel>
+            <Carousel isFullSize={true}>
                 {carouselData.carouselItem.map((item, i) => {
                     return (
                         <img

@@ -13,7 +13,7 @@ class Carousel extends Component {
                 length: this.props.children.length
             })
         }
-        this.startAutoSlide()
+        // this.startAutoSlide()
     }
 
     componentWillUnmount() {
@@ -50,8 +50,12 @@ class Carousel extends Component {
     }
 
     render() {
-        const {children} = this.props
+        const {children, isFullSize} = this.props
         const currentIndex = this.state.currentIndex;
+        const indicatorStyle = isFullSize ? {
+            position: 'absolute',
+            bottom: 0
+        } : {}
 
         return (
             <div className="carousel">
@@ -59,7 +63,7 @@ class Carousel extends Component {
                     <div className="carousel_itemWrapper" style={this.transformProperty(currentIndex)}>
                         {children}
                     </div>
-                    <div className="carousel_indicator">
+                    <div className="carousel_indicator" style={indicatorStyle}>
                         {children && children.map((item, i) => {
                             return (
                                 <span

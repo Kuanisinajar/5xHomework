@@ -29,11 +29,11 @@ const PageFooter = (props) => {
                         </div>
                     </div>
                     <div className="row pageFooter_section">
-                        <div className="col-6">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-6 pageFooter_contactInfo">
                             <p className='pageFooter_contactHighlght'>02-2331-5247</p>
                             <p className='pageFooter_contactSecondary'>10046 台北市中正區衡陽路 7 號 5 樓</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-6 pageFooter_contactInfo">
                             <p className='pageFooter_contactHighlght'>hi@5xruby.tw</p>
                             <p className='pageFooter_contactSecondary'>Mon - Fri / 09:30 - 22:00</p>
                         </div>

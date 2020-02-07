@@ -17,7 +17,9 @@
 .press_imgWrapper:hover {
     filter: none;
 }
-
+.press_imgWrapper:last-child {
+    margin-bottom: 2rem;
+}
 .pageFooter_section {
     margin-bottom: 2rem;
 }
@@ -31,12 +33,19 @@
     font-weight: 500;
     color: $black;
     margin-right: 1.5em;
+
+    @include media('below-tablet') {
+        font-size: 0.9rem;
+    }
 }
 
 .pageFooter_navItem:hover {
     color: $ruby;
 }
 
+.pageFooter_contactInfo {
+    margin-bottom: 1rem;
+}
 
 .pageFooter_contactHighlght {
     font-weight: 500;

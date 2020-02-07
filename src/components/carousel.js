@@ -13,7 +13,7 @@ class Carousel extends Component {
                 length: this.props.children.length
             })
         }
-        // this.startAutoSlide()
+        this.startAutoSlide()
     }
 
     componentWillUnmount() {

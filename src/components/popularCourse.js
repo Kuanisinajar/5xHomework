@@ -11,14 +11,14 @@ const PopularCourse = props => {
     return (
         <Block id="popularCourse">
             <TitledContainer title="熱門網頁設計課程推薦">
-                <div className="row">
+                <div className="row justify-content-center">
                     {popularCourse.map((courseInfo, i) => {
                         return (
                             <div
-                                className="col-12 col-sm-12 col-md-6 col-lg-4"
+                                className="col-10 col-sm-12 col-md-6 col-lg-4"
                                 key={i}
                             >
-                                <CourseCard courseInfo={courseInfo} />
+                                <CourseCard courseInfo={courseInfo}/>
                             </div>
                         );
                     })}

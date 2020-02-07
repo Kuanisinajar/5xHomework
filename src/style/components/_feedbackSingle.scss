@@ -3,9 +3,17 @@
 }
 
 .feedbackSingle_row {
-    margin-top: 3rem;
+    height: 100%;
+    // The height includes indicator's space. 
+    // use transform to push it back so it will center
+    transform: translate(0, -2rem);
 }
 
+.feedbackSingle_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .feedbackSingle_imgWrapper {
     display: block;
     position: relative;
@@ -24,21 +32,26 @@
     }
 }
 
-.feedbackSingle_feedback {
-    letter-spacing: 0.5px;
-    line-height: 1.2em;
-    margin-bottom: 2em;
-    color: $gray-6;
-}
-
 .feedbackSingle_person {
-    font-size: 1.5rem;
-    line-height: 1.5em;
-    color: $ruby;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        font-size: 1.2rem;
+        line-height: 1.5em;
+        color: $ruby;
+    }
+    h2 {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        line-height: 1.2em;
+        color: $gray-4;
+    }
 }
 
-.feedbackSingle_identity {
-    letter-spacing: 0.5px;
-    line-height: 1.2em;
-    color: $gray-4;
+.feedbackSingle_feedback {
+    font-weight: 500;
+    line-height: 1.5em;
+    margin-bottom: 2rem;
 }

@@ -1,40 +1,54 @@
 import React, { Component } from "react";
-
+import { NavLink } from "react-router-dom";
 
 class PageHeader extends Component {
     state = {
         navItem: [],
-        logo_url: '', 
+        logo_url: "",
         activeInMobile: false
-     }
+    };
 
-     toggleActive = () => {
-         this.setState({
-             activeInMobile: !this.state.activeInMobile
-         })
-     }
+    toggleActive = () => {
+        this.setState({
+            activeInMobile: !this.state.activeInMobile
+        });
+    };
 
-    render() { 
+    render() {
         const { navItem, logo_url } = this.props.data;
 
         return (
             <header className="pageHeader">
                 <nav className="navBar">
                     <div className="navBar_logo">
-                        <a href="/">
+                        <NavLink to="/">
                             <img src={logo_url} alt="" />
-                        </a>
+                        </NavLink>
                     </div>
-                    <button className='navBar_toggle' onClick={this.toggleActive}>
-                        <div className='iconBar'></div>
-                        <div className='iconBar'></div>
-                        <div className='iconBar'></div>
+                    <button
+                        className="navBar_toggle"
+                        onClick={this.toggleActive}
+                    >
+                        <div className="iconBar"></div>
+                        <div className="iconBar"></div>
+                        <div className="iconBar"></div>
                     </button>
-                    <div className={`navBar_itemWrapper ${this.state.activeInMobile ? 'active' : ''}`}>
+                    <div
+                        className={`navBar_itemWrapper ${
+                            this.state.activeInMobile ? "active" : ""
+                        }`}
+                    >
                         {navItem.map((data, i) => {
                             return (
                                 <div className="navItem" key={i}>
-                                    <a href="/">{data.text}</a>
+                                    <NavLink
+                                        to={data.route}
+                                        activeStyle={{
+                                            color: "#d71247"
+                                        }}
+                                    >
+                                        {data.text}
+                                    </NavLink>
                                 </div>
                             );
                         })}
@@ -44,7 +58,5 @@ class PageHeader extends Component {
         );
     }
 }
- 
-
 
 export default PageHeader;

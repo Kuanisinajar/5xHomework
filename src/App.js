@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 // components
 import PageHeader from "./components/pageHeader";
@@ -12,9 +13,11 @@ import footerData from "./json/footer";
 function App() {
     return (
         <div className="App">
-            <PageHeader data={headerData} />
-            <Main />
-            <PageFooter data={footerData} />
+            <BrowserRouter>
+                <PageHeader data={headerData} />
+                <Main />
+                <PageFooter data={footerData} />
+            </BrowserRouter>
         </div>
     );
 }

@@ -6,10 +6,6 @@
             "route": "/course"
         },
         {
-            "text": "ASTRO Camp",
-            "route": "/astro-camp"
-        },
-        {
             "text": "短期課程",
             "route": "/talks"
         },
@@ -28,6 +24,10 @@
         {
             "text": "最新消息",
             "route": "/posts"
+        },
+        {
+            "text": "聯絡我們",
+            "route": "/contacts"
         }
     ]
 }

@@ -6,6 +6,12 @@ html {
     color: $black;
 }
 
+
+body {
+    // extra space for heading
+    margin-top: 72px;
+}
+
 a {
     text-decoration: none;
     color: $black;

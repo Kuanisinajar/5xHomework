@@ -8,6 +8,7 @@ import PopularCourse from "./components/popularCourse";
 import Feedback from "./components/feedback";
 import Showcase from './components/showcase';
 import MoreInfo from './components/moreInfo';
+import PageFooter from './components/pageFooter';
 
 // data
 import headerData from "./json/pageHeader";
@@ -16,6 +17,7 @@ import featureData from "./json/feature";
 import popularCourseData from "./json/popularCourse";
 import feedbackData from './json/feedback';
 import showcaseData from './json/showcase';
+import footerData from './json/footer';
 
 function App() {
     return (
@@ -38,6 +40,7 @@ function App() {
             <Feedback data={feedbackData}/>
             <Showcase data={showcaseData}/>
             <MoreInfo />
+            <PageFooter data={footerData}/>
         </div>
     );
 }

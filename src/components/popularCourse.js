@@ -15,7 +15,7 @@ const PopularCourse = props => {
                     {popularCourse.map((courseInfo, i) => {
                         return (
                             <div
-                                className="col-10 col-sm-12 col-md-6 col-lg-4"
+                                className="col-10 col-sm-12 col-md-6 col-lg-4 popularCourse_cardWrapper"
                                 key={i}
                             >
                                 <CourseCard courseInfo={courseInfo}/>

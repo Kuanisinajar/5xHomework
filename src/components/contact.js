@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 
 class Contact extends Component {
-    state = {};
+    state = {
+        name: '',
+        email: '',
+        phone: '',
+        topic: '',
+        message: ''
+    };
+
+    handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+    }
     render() {
         return (
             <section id="contacts">
@@ -37,8 +48,9 @@ class Contact extends Component {
                                     <label className="col-12 col-md-6">
                                         您的電話
                                         <input
-                                            type="text"
+                                            type="tel"
                                             name="phone"
+                                            pattern="09[0-9]{8}"
                                             placeholder="電話"
                                             required
                                         />

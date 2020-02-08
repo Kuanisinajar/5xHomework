@@ -10,8 +10,17 @@ class Contact extends Component {
     };
 
     handleChange = (e) => {
-        const name = e.target.name;
+        const key = e.target.name;
         const value = e.target.value;
+
+        this.setState({
+            [key]: value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submit success')
     }
     render() {
         return (
@@ -25,6 +34,7 @@ class Contact extends Component {
                             <form
                                 action=""
                                 className="contactForm container-fluid"
+                                onSubmit={this.handleSubmit}
                             >
                                 <div className="row">
                                     <label className="col-12 col-md-6">
@@ -34,6 +44,7 @@ class Contact extends Component {
                                             name="name"
                                             placeholder="名字"
                                             required
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                     <label className="col-12 col-md-6">
@@ -43,6 +54,7 @@ class Contact extends Component {
                                             name="email"
                                             placeholder="信箱"
                                             required
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                     <label className="col-12 col-md-6">
@@ -53,6 +65,7 @@ class Contact extends Component {
                                             pattern="09[0-9]{8}"
                                             placeholder="電話"
                                             required
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                     <label className="col-12 col-md-6">
@@ -61,6 +74,7 @@ class Contact extends Component {
                                             name="topic"
                                             defaultValue="default"
                                             required
+                                            onChange={this.handleChange}
                                         >
                                             <option
                                                 value="default"
@@ -93,6 +107,7 @@ class Contact extends Component {
                                             rows="10"
                                             placeholder="請留下您的訊息"
                                             required
+                                            onChange={this.handleChange}
                                         ></textarea>
                                     </label>
                                 </div>

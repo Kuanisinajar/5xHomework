@@ -4,6 +4,6 @@
     width: 100%;
 }
 
-.block:nth-child(odd) {
+.block:nth-child(even) {
     background: $gray-0;
 }

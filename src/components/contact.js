@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+// components
+import ContactModal from './contactModal';
+
 class Contact extends Component {
     state = {
         name: '',
@@ -25,6 +28,7 @@ class Contact extends Component {
     render() {
         return (
             <section id="contacts">
+                <ContactModal />
                 <header className="contacts_header">
                     <h1>有任何問題嗎？馬上聯絡我們</h1>
                 </header>

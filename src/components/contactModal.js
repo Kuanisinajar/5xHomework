@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal'
 
 Modal.setAppElement('#root');
 
 const ContactModal = (props) => {
-    
-    const [isOpen, setIsOpen] = useState(false);
 
-    function closeModal(){
-        setIsOpen(false);
-      }
+    const { data, closeModal } = props;
+    const { modalIsOpen, name, email, phone, topic, message } = data;
 
     return ( 
-        <Modal isOpen={isOpen}>
+        <Modal isOpen={modalIsOpen}>
             <div className="modal_closeArea">
                 <button onClick={closeModal}>
                     <div className="closeIcon"></div>
@@ -25,23 +22,23 @@ const ContactModal = (props) => {
                     </div>
                     <div className="col-12 col-md-6 modal_section">
                         <h1>名字</h1>
-                        <p>劉凱婷</p>
+                        <p>{name}</p>
                     </div>
                     <div className="col-12 col-md-6 modal_section">
                         <h1>信箱</h1>
-                        <p>ting@goomaol.com</p>
+                        <p>{email}</p>
                     </div>
                     <div className="col-12 col-md-6 modal_section">
                         <h1>電話</h1>
-                        <p>0912123123</p>
+                        <p>{phone}</p>
                     </div>
                     <div className="col-12 col-md-6 modal_section">
                         <h1>主題</h1>
-                        <p>project</p>
+                        <p>{topic}</p>
                     </div>
                     <div className="col-12 modal_section">
                         <h1>訊息</h1>
-                        <p>lore</p>
+                        <p>{message}</p>
                     </div>
                 </div>
             </div>

@@ -9,8 +9,21 @@ class Contact extends Component {
         email: '',
         phone: '',
         topic: '',
-        message: ''
+        message: '',
+        modalIsOpen: false
     };
+
+    openModal = () => {
+        this.setState({
+            modalIsOpen: true
+        })
+    }
+
+    closeModal= () => {
+        this.setState({
+            modalIsOpen: false
+        })
+    }
 
     handleChange = (e) => {
         const key = e.target.name;
@@ -23,12 +36,12 @@ class Contact extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('submit success')
+        this.openModal()
     }
     render() {
         return (
             <section id="contacts">
-                <ContactModal />
+                <ContactModal data={this.state} closeModal={this.closeModal}/>
                 <header className="contacts_header">
                     <h1>有任何問題嗎？馬上聯絡我們</h1>
                 </header>
